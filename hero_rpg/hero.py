@@ -56,6 +56,10 @@ class Hero:
         # kill counter
         self.kill_counter: Counter = Counter()
 
+        # default dictionary
+
+        self._item_registry: defaultdict = defaultdict(list)
+
     # ── Health ────────────────────────────────────────────────────────────────
 
     def take_damage(self, amount: int) -> int:
