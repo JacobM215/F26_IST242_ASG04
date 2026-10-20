@@ -31,7 +31,27 @@ class Hero:
     """
 
     def __init__(self, name: str, hero_class: str, max_health: int = 100) -> None:
-        pass
+        self.name: str = name
+        self.name: str = hero_class
+        self.max_health: int = max_health
+        self.health: int = max_health
+
+        # hero inventory
+        self.inventory: Bag = Bag(capacity=20)
+
+        # hero weapons
+        self.equipped_weapons: Bag = Bag(capacity=3)
+
+        # skillset
+        self.skills: set = set()
+
+        # hero stat
+        self.stats: dict[str, int] = {
+            "strength" : 10,
+            "dexerity" : 10,
+            "intelligence" : 10,
+            "defense" : 5
+        }
 
     # ── Health ────────────────────────────────────────────────────────────────
 
