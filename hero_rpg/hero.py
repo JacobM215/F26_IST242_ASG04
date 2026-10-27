@@ -151,4 +151,7 @@ class Hero:
         Returns:
             True if stat exists and was upgraded; False if key not found.
         """
-        pass
+        if stat in self.stats:
+            return False
+        self.stats[stat] += amount
+        return True
