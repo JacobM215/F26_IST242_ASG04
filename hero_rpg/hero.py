@@ -111,7 +111,13 @@ class Hero:
         Returns:
             True if equipped; False if weapon slots are full.
         """
-        pass
+        success: bool = self.equipped_weapons.add(weapon)
+
+        if success:
+            self.combat_log.append(
+                f"{self.name} equipped {weapon.name}"
+            )
+        return success
 
     def learn_skill(self, skill: str) -> bool:
         """
