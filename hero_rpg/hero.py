@@ -57,8 +57,10 @@ class Hero:
         self.kill_counter: Counter = Counter()
 
         # default dictionary
-
         self._item_registry: defaultdict = defaultdict(list)
+
+        # combat log
+        self.combat_log: deque = deque(maxlen=10)
 
     # ── Health ────────────────────────────────────────────────────────────────
 
