@@ -32,7 +32,7 @@ class Hero:
 
     def __init__(self, name: str, hero_class: str, max_health: int = 100) -> None:
         self.name: str = name
-        self.name: str = hero_class
+        self.hero_class: str = hero_class
         self.max_health: int = max_health
         self.health: int = max_health
 
@@ -45,16 +45,16 @@ class Hero:
         # skillset
         self.skills: set = set()
 
-        # hero stat
+        # hero stats
         self.stats: dict[str, int] = {
             "strength" : 10,
-            "dexerity" : 10,
+            "dexterity" : 10,
             "intelligence" : 10,
             "defense" : 5
         }
 
         # kill counter
-        self.kill_counter: Counter = Counter()
+        self.kill_counter: Counter[str] = Counter()
 
         # default dictionary
         self._item_registry: defaultdict = defaultdict(list)
