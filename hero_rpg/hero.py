@@ -142,7 +142,13 @@ class Hero:
         Returns:
             True if added; False if inventory is full.
         """
-        pass
+        success: bool = self.inventory.add(item)
+        if success:
+            self.combat_log.append(
+                f"{self.name} picked up {item.name}"
+            )
+            
+        return success
 
     def items_by_type(self) -> dict[str, list[Item]]:
         """
