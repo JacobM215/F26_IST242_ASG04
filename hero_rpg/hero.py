@@ -89,7 +89,7 @@ class Hero:
             Actual HP restored (may be less if already near full).
         """
         actual: int = min(self.max_health - self.health, amount)
-        self.health = self.health + amount
+        self.health = self.health + actual
 
         self.combat_log.append(
             f"{self.name} healed {actual} HP. "
@@ -129,7 +129,7 @@ class Hero:
         success : bool = False
         if skill in self.skills:
             return success
-        self.skils.add(skill)
+        self.skills.add(skill)
         success = True
         return success
 
@@ -147,7 +147,7 @@ class Hero:
             self.combat_log.append(
                 f"{self.name} picked up {item.name}"
             )
-            self._item_registry[item.item_type.value].append.item
+            self._item_registry[item.item_type.value].append(item)
         return success
 
     def items_by_type(self) -> dict[str, list[Item]]:
