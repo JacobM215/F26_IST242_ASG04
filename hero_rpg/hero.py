@@ -166,6 +166,11 @@ class Hero:
         """
         self.kill_counter[enemy_type] += 1
 
+        self.combat_log.append(
+            f"{self.name} defeated a {enemy_type}!"
+            f"(Total {enemy_type} kills: {self.kill_counter[enemy_type]})"
+        )
+
     def total_damage_potential(self) -> int:
         """Sum damage of all currently equipped weapons."""
         pass
